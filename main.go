@@ -11,7 +11,7 @@ func main() {
 	
 	urlBind(r)
 
-	r.Run() //default to 8080 port
+	r.Run(":8080") //default to 8080 port
 }
 
 
