@@ -4,7 +4,6 @@ import (
 	"demo/constant"
 	"demo/dto"
 	"demo/utils"
-	"fmt"
 	"log"
 	"path"
 	"strconv"
@@ -67,7 +66,7 @@ func defaultImageGenerate(req *dto.ImageGenerateRequest) (string, error){
 			canvas.DrawStringWrapped(item.Value, float64(size.X)/1.3, float64(size.Y)/3, 0.5, 0.5, float64(size.X/2), float64(size.Y/2), gg.AlignCenter)
 		}
 	}
-	name := path.Join(ResourceRoot,fmt.Sprintf("/output/%s",strconv.FormatInt(time.Now().UnixNano(), 10)+".png"))
+	name := path.Join("/root/media/",strconv.FormatInt(time.Now().UnixNano(), 10)+".png")
 	canvas.SavePNG(name)
 	return name, nil
 }
