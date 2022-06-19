@@ -66,7 +66,7 @@ func defaultImageGenerate(req *dto.ImageGenerateRequest) (string, error){
 			canvas.DrawStringWrapped(item.Value, float64(size.X)/1.3, float64(size.Y)/3, 0.5, 0.5, float64(size.X/2), float64(size.Y/2), gg.AlignCenter)
 		}
 	}
-	name := path.Join("/root/media/",strconv.FormatInt(time.Now().UnixNano(), 10)+".png")
-	canvas.SavePNG(name)
+	name := path.Join("/media/",strconv.FormatInt(time.Now().UnixNano(), 10)+".png")
+	canvas.SavePNG("/root"+name)
 	return name, nil
 }
